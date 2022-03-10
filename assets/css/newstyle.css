@@ -1,0 +1,400 @@
+/* flip card */
+.wcard {
+    width: 62%;
+    height: 50%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  .wcard div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    background: #fff;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -o-box-pack: center;
+    justify-content: center;
+    -o-box-align: center;
+    align-items: center;
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #47525d;
+  }
+  .wcard .back {
+    transform: rotateY(180deg);
+  }
+  .wcard.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  
+  /*map style*/
+  #map {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 400px;
+  border-radius: 3px;
+  }
+  
+  .mapboxgl-popup {
+  max-width: 200px;
+  
+  }
+  .mapboxgl-popup-content {
+  background: #313e45;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  width: 300px;
+  height: 200px;  
+  border-radius: 25px;
+  padding: 0px;
+      
+  }
+  
+  .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  
+    border-bottom-color: #313e45;
+    }
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: #313e45;
+  }
+  .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip{
+    border-bottom-color:#313e45;
+  }
+  .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip{
+   border-bottom-color:#313e45;
+  }
+  .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip{
+    border-top-color:#313e45;
+  }
+  .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip{
+   border-top-color:#313e45;
+  }
+  
+  /*side nav bar for map*/
+  #mySidenav div {
+    position: absolute;
+    right: -3%;
+    transition: 0.3s;
+    padding: 3px;
+    width: 6%;
+    height:45px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  #mySidenav div:hover {
+    
+    right: 0;
+    width: 50%;
+    height:200px;
+  }
+  
+  #s1 {
+    top: 20px;
+    background-color: #04AA6D;
+  }
+  
+  #s2 {
+    top: 80px;
+    background-color: #2196F3;
+  }
+  
+  #s3 {
+    top: 140px;
+    background-color: #f44336;
+  }
+  
+  #s4 {
+    top: 200px;
+    background-color: #555
+  }
+  /*<div id="mySidenav" class="sidenav">
+    <div id="s2">
+      
+      <i class="material-icons">location_on</i>
+  
+      
+  
+    </div>
+  
+  </div>*/
+  
+  /*style start*/
+  
+  .select {
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    margin-top: 18px;
+    width:250px;
+    height:40px;
+  }
+  
+  .select:hover {
+    cursor: pointer;
+  }
+  
+  .option {
+    padding:0 30px 0 10px;
+    min-height:50px;
+    margin-top: -10px;
+    display:flex;
+    align-items:center;
+    background:#333;
+    border-top:#222 solid 1px;
+    position:absolute;
+    top:0;
+    width: 110%;
+    pointer-events:none;
+    order:2;
+    z-index:1;
+    transition:background .4s ease-in-out;
+    box-sizing:border-box;
+    overflow:hidden;
+    white-space:nowrap;
+    
+  }
+  
+  .option:hover {
+    background:#1a7bc9;
+    cursor: pointer;
+  }
+  
+  .select:focus .option {
+    position:relative;
+    pointer-events:all;
+  }
+  
+  /* input {
+    opacity:1.0;
+    position:absolute;
+    left:-99999px;
+  }
+  
+  
+  input:checked + label {
+    order: 1;
+    z-index:2;
+    /*background:#1a7bc9;*/
+    /* border-top:none;
+    position:relative;
+  }
+  
+  input:checked + label:after {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent; */
+    /*border-top: 5px solid white;*/
+    /* position:absolute;
+    right:10px;
+    top:calc(50% - 2.5px);
+    pointer-events:none;
+    z-index:3;
+  }
+  
+  input:checked + label:before {
+    position:absolute;
+    right:0;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    content: '';
+    background:#1a7bc9;
+  } */ */
+  
+  
+  .center {
+  margin: auto;
+  width: 62%;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 10px;}
+  
+  .chart-circle {
+    display: flex;
+    justify-content: center; }
+    .chart-circle .circles-text {
+      font-size: 25px !important; }
+  
+  
+  
+  /*pop up week temp*/
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300);
+  
+  
+  .widget-container {
+    width: 320px;
+    height: 200px;
+    display: block;
+    color: #fff;
+    background-color: #313e45;
+    border-radius: 25px;
+  /*   border: 5px solid #eceff1; */
+    margin: 0 auto;
+  }
+  
+  .flex-container{
+   display: flex;
+  /* border-style: solid;
+   border-color: #263238;*/
+  
+  }
+  .flex-box{
+    flex:24%;
+    padding: 10px 0 0 10px;
+  }
+  .flex-box2{
+    flex:28%;
+    padding: 10px 0 0 10px;
+  }
+  
+  /* Widget 4 Quarter Division here */
+  
+  .top-left {
+    height: 40%;
+    width: 50%;
+    /*   background-color:red; */
+    padding: 22px 0 0 20px;
+    display: inline-block;
+  }
+  
+  .top-right {
+    height: 64%;
+    width: 50%;
+    /*   background-color: blue; */
+    float: right;
+    padding: 20px 12px 0 6px;
+  }
+  
+  .bottom-left {
+    height: 40%;
+    width: 100%;
+    /*   background-color:orange; */
+    float: left;
+    margin: 0;
+    
+  }
+  
+  
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .p1{
+    font-size:12px;
+  }
+  
+  
+  /* Top-left Div CSS */
+  
+  #city {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  
+  #day {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+  margin-left: 10px;
+  }
+  
+  
+  
+  
+  
+  .top-left > a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .top-left > a:hover {
+    color: #b0bec5;
+  }
+  
+  
+  /* Top-Right Div CSS */
+  
+  #weather-status {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .top-right > img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 15px auto 0 auto;
+  }
+  
+  
+  
+  
+  
+  /* Bottom-left CSS */
+  
+  #temperature,
+  .celsius,
+  #temp-divider,
+  #fahrenheit {
+    display: inline;
+    vertical-align: middle;
+  }
+  
+  #temperature {
+    font-size: 60px;
+    font-weight: 800;
+    margin-right: 5px;
+  }
+  
+  .celsius {
+    margin-right: 2px;
+  }
+  
+  #fahrenheit {
+    margin-right: 0px;
+    color: #b0bec5;
+    margin-left:-3px;
+  }
+  
+  .celsius,
+  #temp-divider,
+  #fahrenheit {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  
+  .celsius:hover,
+  #fahrenheit:hover {
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
